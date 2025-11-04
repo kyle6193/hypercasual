@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dxwdj5ejvlsm4"]
+[gd_scene load_steps=3 format=3 uid="uid://dxwdj5ejvlsm4"]
 
 [ext_resource type="FontFile" uid="uid://bt1e2hsivknhi" path="res://Assets/FredokaOne-Regular.ttf" id="1_lti8b"]
+[ext_resource type="Script" uid="uid://xge7wu5168d7" path="res://menu.gd" id="1_ouk20"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ouk20")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -40,3 +42,5 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_lti8b")
 theme_override_font_sizes/font_size = 60
 text = "Play"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
