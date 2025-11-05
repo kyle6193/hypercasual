@@ -1,12 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://d14vxeufsf5eu"]
+[gd_scene load_steps=6 format=3 uid="uid://d14vxeufsf5eu"]
 
 [ext_resource type="Script" uid="uid://b2rb6odc5ml8f" path="res://player.gd" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://cgjv1ua1e8yyc" path="res://main.gd" id="1_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://oewi7ylvcyxb" path="res://Assets/Player.png" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://maui6rfckl0o" path="res://bullet.tscn" id="2_lquwl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ig7tw"]
 radius = 80.15611
 
 [node name="main" type="Node"]
+script = ExtResource("1_1bvp3")
+bullet = ExtResource("2_lquwl")
 
 [node name="player" type="Area2D" parent="."]
 position = Vector2(270, 855.99994)
@@ -19,3 +23,9 @@ texture = ExtResource("1_ig7tw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("CircleShape2D_ig7tw")
+
+[node name="fireratetimer" type="Timer" parent="."]
+wait_time = 0.15
+autostart = true
+
+[connection signal="timeout" from="fireratetimer" to="." method="_on_fireratetimer_timeout"]
