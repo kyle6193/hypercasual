@@ -3,7 +3,6 @@ extends Area2D
 var min_x : int = 40
 var max_x : int = 500
 
-#update ship's position to mouse click
 func _input(event: InputEvent) -> void:
 	if Input.is_action_pressed("click"):
 		position.x = event.position.x
