@@ -3,6 +3,7 @@ extends Node
 @export var bullet : PackedScene
 
 var bullet_speed : int = 600
+var block_speed : int = 150
 
 func _on_fireratetimer_timeout() -> void:
 	var bullet_instance : Area2D = bullet.instantiate()
